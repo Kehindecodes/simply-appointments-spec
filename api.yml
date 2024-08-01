@@ -65,18 +65,20 @@ paths:
           $ref: "#/components/responses/Conflict"
 
   /users/reset-password:
-    post:
-      description: Reset password
-      operationId: resetPassword
+    patch:
+      description: Reset user password
+      operationId: resetUserPassword
       requestBody:
         content:
           application/json:
             schema:
               type: object
               properties:
-                token:
+                email:
                   type: string
                 password:
+                  type: string
+                confirmPassword:
                   type: string
       responses:
         "200":
