@@ -1016,8 +1016,11 @@ components:
           type: string
         time:
           type: string
+        endTime:
+          type: string
         date:
           type: string
+          format: date
         staffId:
           type: string
         serviceId:
