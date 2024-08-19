@@ -508,6 +508,46 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
+  /appointments/available_dates:
+    get:
+      description: Get list of available dates
+      operationId: getAvailableDates
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of available dates
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "403":
+          $ref: "#/components/responses/NotAuthorized"
+
+  /appointments/available_times:
+    get:
+      description: Get list of available times
+      operationId: getAvailableTimes
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of available times
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "403":
+          $ref: "#/components/responses/NotAuthorized"
+
   /services:
     get:
       description: Get list of services
@@ -1050,9 +1090,8 @@ components:
         duration:
           type: string
           nullable: true
-          required:
-            - name
-            - price
+        customerPerDay:
+          type: number
         isAtive:
           type: boolean
 
