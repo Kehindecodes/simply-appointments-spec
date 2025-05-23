@@ -364,8 +364,8 @@ paths:
 
   /users/{userId}/appointment/{appointmentId}/reschedule:
     patch:
-      description: Reschedule an appointment
-      operationId: rescheduleAppointment
+      description: Reschedule user appointment
+      operationId: rescheduleUserAppointment
       security:
         - bearerAuth: []
       requestBody:
@@ -486,7 +486,7 @@ paths:
 
   /appointments/{appointmentid}/reschedule:
     patch:
-      description: Reschedule an appointment
+      description: Reschedule an appointment by Admin
       operationId: rescheduleAppointment
       security:
         - bearerAuth: []
@@ -635,9 +635,9 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
-  /users/{userid}/service/{serviceid}:
+  /staffs/{staffId}/service/{serviceId}:
      post:
-      description: Add service to user
+      description: Add service to staff
       operationId: addService
       security:
         - bearerAuth: []
@@ -648,10 +648,10 @@ paths:
           $ref: "#/components/responses/NotFound"
         "403":
           $ref: "#/components/responses/NotAuthorized"
-    
+
      get:
-        description: Get user service
-        operationId: getUserService
+        description: Get Staff service
+        operationId: getStaffService
         security:
           - bearerAuth: []
         responses:
@@ -667,7 +667,7 @@ paths:
             $ref: "#/components/responses/NotAuthorized"
 
      delete:
-        description: Remove service from user
+        description: Remove service from staff
         operationId: removeService
         security:
           - bearerAuth: []
@@ -678,16 +678,16 @@ paths:
             $ref: "#/components/responses/NotFound"
           "403":
             $ref: "#/components/responses/NotAuthorized"
-            
-  /users/{userid}/service:
+
+  /staffs/{staffId}/service:
     get:
-      description: Get user services
-      operationId: getUserServices
+      description: Get list of staff services
+      operationId: getStaffServices
       security:
         - bearerAuth: []
       responses:
         "200":
-          description: List of user services
+          description: List of staff services
           content:
             application/json:
               schema:
@@ -699,7 +699,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
-  /staff/{staffid}/appointment:
+  /staff/{staffId}/appointment:
     get:
       description: Get staff appointments
       operationId: getStaffAppointments
@@ -718,6 +718,7 @@ paths:
           $ref: "#/components/responses/NotFound"
         "403":
           $ref: "#/components/responses/NotAuthorized"
+
   /staff/{staffid}/appointment/{appointmentid}:
     patch:
       description: change appointment status
@@ -836,7 +837,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
     get:
-      description: Get user role 
+      description: Get user role
       operationId: getUserRole
       security:
         - bearerAuth: []
@@ -891,7 +892,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
- 
+
 
 components:
   securitySchemes:
