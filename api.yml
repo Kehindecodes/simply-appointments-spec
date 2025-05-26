@@ -635,7 +635,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
-  /staffs/{staffId}/service/{serviceId}:
+  /users/{staffId}/service/{serviceId}:
      post:
       description: Add service to staff
       operationId: addService
@@ -679,7 +679,7 @@ paths:
           "403":
             $ref: "#/components/responses/NotAuthorized"
 
-  /staffs/{staffId}/service:
+  /users/{staffId}/service:
     get:
       description: Get list of staff services
       operationId: getStaffServices
@@ -699,7 +699,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
-  /staff/{staffId}/appointment:
+  /users/{staffId}/appointment:
     get:
       description: Get staff appointments
       operationId: getStaffAppointments
@@ -719,7 +719,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
-  /staff/{staffid}/appointment/{appointmentid}:
+  /users/{staffid}/appointment/{appointmentid}:
     patch:
       description: change appointment status
       operationId: updateAppointmentStatus
