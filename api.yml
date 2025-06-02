@@ -265,7 +265,7 @@ paths:
         "409":
           $ref: "#/components/responses/Conflict"
 
-  /users/{userId}/appointment/{appointmentId}:
+  /users/{userId}/appointments/{appointmentId}:
     parameters:
       - $ref: "#/components/parameters/UserIdParam"
       - $ref: "#/components/parameters/AppointmentIdParam"
@@ -321,7 +321,7 @@ paths:
         "409":
           $ref: "#/components/responses/Conflict"
 
-  /users/{userId}/appointment:
+  /users/{userId}/appointments:
     parameters:
       - $ref: "#/components/parameters/UserIdParam"
     post:
@@ -362,7 +362,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
-  /users/{userId}/appointment/{appointmentId}/reschedule:
+  /users/{userId}/appointments/{appointmentId}/reschedule:
     patch:
       description: Reschedule user appointment
       operationId: rescheduleUserAppointment
@@ -635,7 +635,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
-  /users/{staffId}/service/{serviceId}:
+  /users/{staffId}/services/{serviceId}:
      post:
       description: Add service to staff
       operationId: addService
@@ -679,7 +679,7 @@ paths:
           "403":
             $ref: "#/components/responses/NotAuthorized"
 
-  /users/{staffId}/service:
+  /users/{staffId}/services:
     get:
       description: Get list of staff services
       operationId: getStaffServices
@@ -699,7 +699,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
-  /users/{staffId}/appointment:
+  /users/{staffId}/appointments:
     get:
       description: Get staff appointments
       operationId: getStaffAppointments
@@ -719,7 +719,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
-  /users/{staffid}/appointment/{appointmentid}:
+  /users/{staffid}/appointments/{appointmentId}:
     patch:
       description: change appointment status
       operationId: updateAppointmentStatus
@@ -785,7 +785,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
-  /roles/{roleid}:
+  /roles/{roleId}:
     parameters:
       - $ref: "#/components/parameters/RoleIdParam"
     get:
@@ -818,7 +818,7 @@ paths:
         "403":
           $ref: "#/components/responses/NotAuthorized"
 
-  /users/{userid}/role/{roleid}:
+  /users/{userid}/role/{roleId}:
     patch:
       description: Update user role
       operationId: updateUserRole
