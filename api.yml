@@ -7,7 +7,7 @@ servers:
   - url: http://api.simplyappointments.com/v1
 
 paths:
-  /users/login:
+  /auth/login:
     post:
       description: Login user
       operationId: loginUser
@@ -31,7 +31,7 @@ paths:
         "404":
           $ref: "#/components/responses/NotFound"
 
-  /users/logout:
+  /auth/logout:
     post:
       description: Logout user
       operationId: logoutUser
@@ -43,7 +43,7 @@ paths:
         "404":
           $ref: "#/components/responses/NotFound"
 
-  /users/forgot-password:
+  /auth/forgot-password:
     post:
       description: Forgot password
       operationId: forgotPassword
@@ -64,7 +64,7 @@ paths:
         "409":
           $ref: "#/components/responses/Conflict"
 
-  /users/reset-password:
+  /auth/password/reset:
     patch:
       description: Reset user password
       operationId: resetUserPassword
@@ -88,7 +88,7 @@ paths:
         "409":
           $ref: "#/components/responses/Conflict"
 
-  /users/otp:
+  /auth/otp/send:
     patch:
       description: create a one time password for user
       operationId: createOTP
@@ -107,7 +107,7 @@ paths:
         "404":
           $ref: "#/components/responses/NotFound"
 
-  /users/validate-otp:
+  /auth/otp/validate:
     post:
       description: validate one time password for user
       operationId: validateOTP
