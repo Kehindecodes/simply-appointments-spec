@@ -1104,14 +1104,10 @@ components:
           type: number
         description:
           type: string
-          nullable: true
         duration:
           type: string
-          nullable: true
         customerPerDay:
           type: number
-        isAtive:
-          type: boolean
 
     Role:
       type: object
