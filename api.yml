@@ -1106,8 +1106,6 @@ components:
           type: string
         duration:
           type: string
-        customerPerDay:
-          type: number
 
     Role:
       type: object
