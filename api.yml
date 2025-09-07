@@ -410,6 +410,30 @@ paths:
         "409":
           $ref: "#/components/responses/Conflict"
 
+  /users/{userId}/roles:
+    parameters: 
+      - $ref: "#/components/parameters/UserIdParam"
+    patch:
+        description: Update user role
+        operationId: updateUserRole
+        security:
+          - bearerAuth: []
+        requestBody:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roleId:
+                    type: string
+        responses:
+          "200":
+            description: OK
+          "404":
+            $ref: "#/components/responses/NotFound"
+          "403":
+            $ref: "#/components/responses/NotAuthorized"
+
   /staffs:
     get:
       description: Get list of staffs
