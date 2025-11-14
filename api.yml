@@ -682,11 +682,11 @@ paths:
   /staffs/{staffId}/services/{serviceId}:
      post:
       description: Add service to staff
-      operationId: addService
+      operationId: addStaffService
       security:
         - bearerAuth: []
       responses:
-        "200":
+        "200": 
           description: OK
         "404":
           $ref: "#/components/responses/NotFound"
