@@ -167,7 +167,7 @@ paths:
           $ref: "#/components/responses/Conflict"
     get:
       description: Get list of users
-      operationId: getUser
+      operationId: getUsers
       security:
         - bearerAuth: []
       parameters:
